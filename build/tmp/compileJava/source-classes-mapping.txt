@@ -1,4 +1,6 @@
+com/fju/GUI.java
+ com.fju.GUI
+com/fju/Menu.java
+ com.fju.Menu
 com/fju/Tester.java
  com.fju.Tester
-com/fju/Json.java
- com.fju.Json

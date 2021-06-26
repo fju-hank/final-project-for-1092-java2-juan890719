@@ -2,8 +2,8 @@ package com.fju;
 
 public class Tester {
     public static void main(String[] args) {
-        Json json = new Json();
-        String value = json.taipeiActivity();
-        System.out.println("result = " + value);
+        Menu menu = new Menu();
+        menu.addMenu("Test", "Cake", "30");
+        menu.printMenu();
     }
 }
