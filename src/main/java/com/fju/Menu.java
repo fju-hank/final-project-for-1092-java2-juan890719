@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Menu {
     ArrayList<String> list = new ArrayList<>();
+    String meals;
 
     public void addMenu(String name, String type, String price) {
         list.add(name + "\t" + type + "\t" + price);
