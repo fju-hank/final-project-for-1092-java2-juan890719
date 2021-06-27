@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class Tester {
     public static void main(String[] args) {
+        Tester tester = new Tester();
+        tester.open();
+    }
+
+    public void open() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("您好這裡是咖啡廳，請選擇文字模式或是GUI模式 ( 1or2 )：");
         String select = scanner.next();
@@ -13,16 +18,11 @@ public class Tester {
             select = scanner.next();
         }
         if (select.equals("1")) {
-            Tester tester = new Tester();
-            tester.menuSee();
+            TextInterface textInterface = new TextInterface();
+            textInterface.openTextInterface();
         } else if (select.equals("2")) {
             GUI gui = new GUI();
             gui.openGUI();
         }
-    }
-
-    public void menuSee() {
-        Menu menu = new Menu();
-
     }
 }
