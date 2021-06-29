@@ -3,7 +3,13 @@ package com.fju;
 import java.util.Scanner;
 
 public class TextInterface {
+    Menu menu = new Menu();
     public void openTextInterface() {
+        if (menu.list.size() < 2) {
+            menu.addMenu("Americano", "Drink", "60");
+            menu.addMenu("Espresso shots", "Drink", "50");
+            menu.addMenu("Café Latte", "Drink", "70");
+        }
         Scanner scanner = new Scanner(System.in);
         System.out.println("您想選擇看菜單、新增菜單餐點還是離開呢 ( 1or2or3 )：");
         String select = scanner.next();
@@ -32,12 +38,6 @@ public class TextInterface {
 
     public void menuSee() {
         Scanner scanner = new Scanner(System.in);
-        Menu menu = new Menu();
-        if (menu.list.size() < 2) {
-            menu.addMenu("Americano", "Drink", "60");
-            menu.addMenu("Espresso shots", "Drink", "50");
-            menu.addMenu("Café Latte", "Drink", "70");
-        }
         menu.printMenu();
         System.out.println("接下來您想選擇新增菜單餐點、離開哪個呢 ( 1or2 )：");
         String select = scanner.next();
@@ -59,7 +59,6 @@ public class TextInterface {
     }
 
     public void addMenuMeal() {
-        Menu meal = new Menu();
         Scanner scanner = new Scanner(System.in);
         System.out.println("請輸入欲新增餐點的餐點名：");
         String name = scanner.next();
@@ -67,7 +66,7 @@ public class TextInterface {
         String type = scanner.next();
         System.out.println("請輸入欲新增餐點的價格：(NT$，請用阿拉伯數字)");
         String price = scanner.next();
-        meal.addMenu(name, type, price);
+        menu.addMenu(name, type, price);
         System.out.println("新增成功！");
         System.out.println("接下來您想看菜單、離開哪一個呢？ ( 1or2 )");
         String select = scanner.next();
